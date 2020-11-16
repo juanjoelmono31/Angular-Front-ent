@@ -1,0 +1,27 @@
+
+.formulario_materias{
+    margin-left: 3%;
+    margin-right: 50%;
+}
+
+.encabezado{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+}
+header{
+    width: 100%;
+    height: 600px;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(210, 29%, 24%, 0.63), hsla(204, 8%, 76%, 0.26)), url(../imagenes/Cel.jpg);  
+    background: linear-gradient(to right, hsla(210, 29%, 24%, 0.63), hsla(204, 8%, 76%, 0.26)), url(../imagenes/Cel.jpg); 
+    
+
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.lable{
+    color: cornsilk;
+}

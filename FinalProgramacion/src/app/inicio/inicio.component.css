@@ -1,0 +1,28 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.encabezado{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+}
+
+header{
+    width: 100%;
+    height: 600px;
+    background: #333333;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(0, 80%, 48%, 0.733), hsla(0, 0%, 20%, 0.767)), url(../imagenes/una-taza-de-javascript.png);  
+    background: linear-gradient(to right, hsla(0, 80%, 48%, 0.733), hsla(0, 0%, 20%, 0.767)), url(../imagenes/una-taza-de-javascript.png); 
+
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.hedear_textos{
+    color: cornsilk;
+    margin-left: 65%;
+}
