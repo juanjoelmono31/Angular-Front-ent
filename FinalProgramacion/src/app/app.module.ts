@@ -12,6 +12,8 @@ import { ProfesoresComponent } from './profesores/profesores.component';
 import { MenuComponent } from './menu/menu.component';
 import { MateriasComponent } from './materias/materias.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ListaComponent } from './lista/lista.component';
 
 
 
@@ -24,12 +26,14 @@ import { InicioComponent } from './inicio/inicio.component';
     MenuComponent,
     MateriasComponent,
     InicioComponent,
+    ListaComponent,
  
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     RouterModule
   ],

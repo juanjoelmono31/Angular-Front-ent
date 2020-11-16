@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServicesService } from '../servicios/services.service';
 
 @Component({
   selector: 'app-profesores',
@@ -9,17 +10,37 @@ import { Router } from '@angular/router';
 })
 export class ProfesoresComponent implements OnInit {
 
-  constructor(private router: Router) { 
+  nombre: string;
+  apellido: string;
+  correo: string;
+  tipoDocumento: Selection;
+  documento: number;
+  telefono: number;
 
-  }
+  constructor(private servicio: ServicesService) { }
 
   ngOnInit(): void {
   }
 
+  enviarDatos(){
+    const data = {
+      "nombre": this.nombre,
+      "apellido": this.apellido,
+      "correo": this.correo,
+      "tipoDocumento": this.tipoDocumento,
+      "documento":this.documento,
+      "telefono":this.telefono
+    }
 
-  navegarHaciaEstudiantes(){
+    this.servicio.postEstudiantes(data).then(dataForm => {
+      console.log("DATOS ENVIADOS ", dataForm);
+      alert('El profesor se creo correctamente');
+  
+    }).catch(err =>
+      alert('Sucedio un erro al crea el prpfesor')
+  
+    );
+   }
 
-    this.router.navigate(['/estudiantes']);
 
-  }
 }
