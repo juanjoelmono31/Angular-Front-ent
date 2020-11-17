@@ -15,6 +15,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListaComponent } from './lista/lista.component';
 
+//External 
+import{NgxSpinnerModule } from 'ngx-spinner';
+
 
 
 
@@ -35,7 +38,8 @@ import { ListaComponent } from './lista/lista.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

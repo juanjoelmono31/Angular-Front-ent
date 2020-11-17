@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServicesService } from '../servicios/services.service';
+import{NgxSpinnerService } from 'ngx-spinner'; 
 
 @Component({
   selector: 'app-profesores',
@@ -17,10 +18,18 @@ export class ProfesoresComponent implements OnInit {
   documento: number;
   telefono: number;
 
-  constructor(private servicio: ServicesService) { }
+  constructor(private servicio: ServicesService, private spinnerService: NgxSpinnerService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(){
+    this.spinner();
+ }
+ 
+ spinner(): void {
+  this.spinnerService.show();
+  setTimeout(() =>{
+    this.spinnerService.hide();
+  }, 2000);
+}
 
   enviarDatos(){
     const data = {
