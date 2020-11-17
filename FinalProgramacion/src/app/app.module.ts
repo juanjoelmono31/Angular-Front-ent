@@ -17,6 +17,7 @@ import { ListaComponent } from './lista/lista.component';
 
 //External 
 import{NgxSpinnerModule } from 'ngx-spinner';
+import { ListaProfesoresComponent } from './lista-profesores/lista-profesores.component';
 
 
 
@@ -30,6 +31,7 @@ import{NgxSpinnerModule } from 'ngx-spinner';
     MateriasComponent,
     InicioComponent,
     ListaComponent,
+    ListaProfesoresComponent,
  
     
   ],

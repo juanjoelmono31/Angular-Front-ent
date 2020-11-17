@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicesService } from '../servicios/services.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-estudiantes',
@@ -10,6 +11,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./estudiantes.component.css']
 })
 export class EstudiantesComponent implements OnInit {
+  title = 'alertifyjs';
 
   form: FormGroup;
 
@@ -19,6 +21,7 @@ export class EstudiantesComponent implements OnInit {
   tipoDocumento: Selection;
   documento: string;
   telefono: string;
+
 
 
   constructor(private servicio: ServicesService, private spinnerService: NgxSpinnerService) { }
@@ -46,12 +49,10 @@ export class EstudiantesComponent implements OnInit {
     }
     this.servicio.postEstudiantes(data).then(dataForm => {
       console.log("DATOS ENVIADOS ", dataForm);
-      alert('El estudiante se creo correctamente');
+      alertify.alert('Se creo el estudiante correctamente', function(){alertify.success('OK');});
 
-    }).catch(err =>
-      alert('Sucedio un erro al crea el estudiante')
-
-    );
+    })
+    alertify.alert('Courrio un error');
   }
 
   borrarDatos() {

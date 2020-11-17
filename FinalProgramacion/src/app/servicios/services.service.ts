@@ -41,5 +41,9 @@ export class ServicesService {
   postProfesores(data): Promise<any> {
     return this._http.post(`${this.WEB_URL}api/Profesores`, data, this.httpOptions).toPromise();
   }
+
+  getNombreMaterias() {
+    return this._http.get(`${this.WEB_URL}api/NombreMaterias`);
+  }
 }
 

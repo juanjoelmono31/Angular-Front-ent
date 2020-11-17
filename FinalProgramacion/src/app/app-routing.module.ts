@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { from } from 'rxjs';
 import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { ListaProfesoresComponent } from './lista-profesores/lista-profesores.component';
 import { ListaComponent } from './lista/lista.component';
 import { MateriasComponent } from './materias/materias.component';
 import { MenuComponent } from './menu/menu.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
   {path: 'materias', component: MateriasComponent},
   {path: 'lista', component: ListaComponent},
+  {path: 'listaProfesores', component: ListaProfesoresComponent},
 
   {path: '', redirectTo: '/inicio', pathMatch: 'full'}
 ];

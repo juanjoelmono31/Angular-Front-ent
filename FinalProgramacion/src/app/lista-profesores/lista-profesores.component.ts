@@ -3,21 +3,21 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ServicesService } from '../servicios/services.service';
 
 @Component({
-  selector: 'app-lista',
-  templateUrl: './lista.component.html',
-  styleUrls: ['./lista.component.css']
+  selector: 'app-lista-profesores',
+  templateUrl: './lista-profesores.component.html',
+  styleUrls: ['./lista-profesores.component.css']
 })
-export class ListaComponent implements OnInit {
-  // variable para guardar la informacion traida del back
-  listaEstudiantes;
+export class ListaProfesoresComponent implements OnInit {
+
+  listaProfesores;
 
   constructor(private spinnerService: NgxSpinnerService, private servicio: ServicesService) { }
 
   ngOnInit() {
     this.spinner();
-    this.servicio.getEstudiantes().subscribe(data => {
+    this.servicio.getProfesores().subscribe(data => {
       console.log(data);
-      this.listaEstudiantes = data;
+      this.listaProfesores = data;
     });
   }
 

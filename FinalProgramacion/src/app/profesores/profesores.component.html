@@ -13,7 +13,8 @@
 
     <div class="form-group">
         <label class="lable">Tipo de documento</label>
-        <select class="form-control" name="tipoDocumento"  [(ngModel)]="tipoDocumento">
+        <select [(ngModel)]="tipoDocumento" class="form-control"  >
+          <option value="" hidden>Seleccione un tipo</option>
           <option>Cedula de ciudadania</option>
           <option>Tarjeta de identidad</option>
           <option>Cedula extranjera </option>
@@ -39,5 +40,10 @@
         <button type="reset" class="btn btn-secondary btn-danger" (click)="borrarDatos()" >Borrar</button>
     </div>
 </div>    
-<div class="encabezado" style="height: 40px; overflow: hidden;" ><svg viewBox="0 0 500 140" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-1.97,-0.48 C143.06,-4.44 499.72,96.20 508.17,49.83 L500.00,150.00 L-1.97,150.48 Z" style="stroke: none; fill: #fff;"></path></svg></div>
 </header>
+
+<footer class="page-footer font-small footerColor">
+    <div class="text-center py-2 footerTexto">Juan Jose Gonzalez Adarve </div>
+    <div class="text-center footerTexto">Programacion IV </div>
+  
+  </footer>

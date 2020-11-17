@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import{NgxSpinnerService } from 'ngx-spinner'; 
+import { ServicesService } from '../servicios/services.service';
+import * as alertify from 'alertifyjs';
+
 
 @Component({
   selector: 'app-materias',
@@ -7,11 +10,25 @@ import{NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./materias.component.css']
 })
 export class MateriasComponent implements OnInit {
+  title = 'alertifyjs';
 
-  constructor(private spinnerService: NgxSpinnerService) { }
+  nombreMaterias;
+  nombreMateria;
+  estudiantes;
+  nombreEstudiante
+  constructor(private spinnerService: NgxSpinnerService, private servicio: ServicesService) { }
 
   ngOnInit(){
     this.spinner();
+    this.servicio.getNombreMaterias().subscribe(data => {
+      console.log(data);
+      this.nombreMaterias = data;
+    });
+
+    this.servicio.getEstudiantes().subscribe(data => {
+      console.log(data);
+      this.estudiantes = data;
+    });
  }
  
  spinner(): void {
@@ -20,5 +37,7 @@ export class MateriasComponent implements OnInit {
     this.spinnerService.hide();
   }, 2000);
 }
+
+
 
 }
