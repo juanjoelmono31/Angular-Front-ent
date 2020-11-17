@@ -1,0 +1,35 @@
+<h3>Notas Estudiantes</h3>
+
+<header>
+</header>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nombre estudiante</th>
+                <th scope="col">Nombre profesor</th>
+                <th scope="col">Materia</th>
+                <th scope="col">Primer corte </th>
+                <th scope="col">Segundo corte </th>
+                <th scope="col">Tercer corte </th>
+                <th scope="col">Nota Final</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let notas of notasEstudiantes">
+            <tr>
+                <td>{{notas.estudiante}}</td>
+                <td>{{notas.profesor}}</td>
+                <td>{{notas.nombre}}</td>
+                <td>{{notas.corte1}}</td>
+                <td>{{notas.corte2}}</td>
+                <td>{{notas.corte3}}</td>
+                <td>{{(notas.corte3 + notas.corte2 + notas.corte3) / 3}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<footer class="page-footer font-small footerColor">
+    <div class="text-center py-2 footerTexto">Juan Jose Gonzalez Adarve </div>
+    <div class="text-center footerTexto">Programacion IV </div>
+
+</footer>

@@ -47,10 +47,11 @@ export class ProfesoresComponent implements OnInit {
 
     this.servicio.postProfesores(data).then(dataForm => {
       console.log("DATOS ENVIADOS ", dataForm);
-      alertify.alert('Se creo el estudiante correctamente', function(){alertify.success('OK');});
-
-    })
-    alertify.alert('Courrio un error');
+      alertify.alert('Se creo el profesor correctamente', function(){alertify.success('Se creo correctamente');});
+      this.borrarDatos();
+    }).catch(err => {
+      alertify.alert('Ocurrio un error al crear el profesor');
+    });
 
    
   }

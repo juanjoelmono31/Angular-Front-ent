@@ -1,4 +1,4 @@
-<h3>Materias</h3> <br>
+<h3>Ingreso de notas</h3> <br>
 
 <header>
     <div class="formulario_materias">
@@ -10,6 +10,13 @@
             </select>
         </div>
         <div class="form-group">
+            <label class="lable">Seleccione profesor</label>
+            <select [(ngModel)]="nombreProfesor" class="form-control">
+                <option value="" hidden>Seleccione un profesor</option>
+                <option *ngFor="let profesor of profesores">{{profesor.nombre}}</option>
+            </select>
+        </div>
+        <div class="form-group">
             <label class="lable">Seleccione materia</label>
             <select [(ngModel)]="nombreMateria" class="form-control">
                 <option value="" hidden>Seleccione una materia</option>
@@ -18,20 +25,20 @@
         </div>
         <div class="form-group">
             <label class="lable">Ingrese nota del corte 1</label>
-            <input type="number" name="nota_1" step="any" class="form-control style" placeholder="">
+            <input type="number" name="nota_1" [(ngModel)]="primerCorte" step="any" class="form-control style" placeholder="">
         </div>
         <div class="form-group">
             <label class="lable">Ingrese nota del corte 2</label>
-            <input type="number" name="nota_1" step="any" class="form-control style" placeholder="">
+            <input type="number" name="nota_1" [(ngModel)]="segundoCorte" step="any" class="form-control style" placeholder="">
         </div>
         <div class="form-group">
             <label class="lable">Ingrese nota del corte 3</label>
-            <input type="number" name="nota_1" step="any" class="form-control style" placeholder="">
+            <input type="number" name="nota_1" [(ngModel)]="tercerCorte" step="any" class="form-control style" placeholder="">
         </div> <br>
 
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="submit" class="btn btn-secondary btn-success" value="Enviar">Enviar</button>
-            <button type="reset" class="btn btn-secondary btn-danger">Borrar</button>
+            <button type="submit" class="btn btn-secondary btn-success" value="Enviar" (click)="enviarDatos()">Enviar</button>
+            <button type="reset" class="btn btn-secondary btn-danger" (click)="borrarDatos()">Borrar</button>
         </div>
     </div>
 </header>

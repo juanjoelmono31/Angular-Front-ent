@@ -18,6 +18,7 @@ import { ListaComponent } from './lista/lista.component';
 //External 
 import{NgxSpinnerModule } from 'ngx-spinner';
 import { ListaProfesoresComponent } from './lista-profesores/lista-profesores.component';
+import { NotasEstudianteComponent } from './notas-estudiante/notas-estudiante.component';
 
 
 
@@ -32,6 +33,7 @@ import { ListaProfesoresComponent } from './lista-profesores/lista-profesores.co
     InicioComponent,
     ListaComponent,
     ListaProfesoresComponent,
+    NotasEstudianteComponent,
  
     
   ],

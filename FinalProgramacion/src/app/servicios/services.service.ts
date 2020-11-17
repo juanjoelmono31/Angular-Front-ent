@@ -45,5 +45,13 @@ export class ServicesService {
   getNombreMaterias() {
     return this._http.get(`${this.WEB_URL}api/NombreMaterias`);
   }
+
+  postMaterias(data): Promise<any> {
+    return this._http.post(`${this.WEB_URL}api/Materias`, data, this.httpOptions).toPromise();
+  }
+
+  getMaterias() {
+    return this._http.get(`${this.WEB_URL}api/Materias`);
+  }
 }
 

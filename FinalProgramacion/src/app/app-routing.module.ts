@@ -7,6 +7,7 @@ import { ListaProfesoresComponent } from './lista-profesores/lista-profesores.co
 import { ListaComponent } from './lista/lista.component';
 import { MateriasComponent } from './materias/materias.component';
 import { MenuComponent } from './menu/menu.component';
+import { NotasEstudianteComponent } from './notas-estudiante/notas-estudiante.component';
 import { ProfesoresComponent } from './profesores/profesores.component';
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'materias', component: MateriasComponent},
   {path: 'lista', component: ListaComponent},
   {path: 'listaProfesores', component: ListaProfesoresComponent},
+  {path: 'notasEstudiante', component:NotasEstudianteComponent},
 
   {path: '', redirectTo: '/inicio', pathMatch: 'full'}
 ];
