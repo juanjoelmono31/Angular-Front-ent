@@ -35,11 +35,11 @@ export class ServicesService {
   }
 
   getProfesores() {
-    return this._http.get(`${this.WEB_URL}api/Profesor`);
+    return this._http.get(`${this.WEB_URL}api/Profesores`);
   }
 
   postProfesores(data): Promise<any> {
-    return this._http.post(`${this.WEB_URL}api/Profesor`, data, this.httpOptions).toPromise();
+    return this._http.post(`${this.WEB_URL}api/Profesores`, data, this.httpOptions).toPromise();
   }
 }
 

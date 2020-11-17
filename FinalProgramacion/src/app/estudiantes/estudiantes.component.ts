@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicesService } from '../servicios/services.service';
-import{NgxSpinnerService } from 'ngx-spinner'; 
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-estudiantes',
@@ -10,53 +10,59 @@ import{NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./estudiantes.component.css']
 })
 export class EstudiantesComponent implements OnInit {
-  
-form: FormGroup;
-  
+
+  form: FormGroup;
+
   nombre: string;
   apellido: string;
   correo: string;
   tipoDocumento: Selection;
-  documento: number;
-  telefono: number;
+  documento: string;
+  telefono: string;
 
 
   constructor(private servicio: ServicesService, private spinnerService: NgxSpinnerService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.spinner();
- }
- 
- spinner(): void {
-  this.spinnerService.show();
-  setTimeout(() =>{
-    this.spinnerService.hide();
-  }, 2000);
-}
-
- enviarDatos(){
-  const data = {
-    "nombre": this.nombre,
-    "apellido": this.apellido,
-    "correo": this.correo,
-    "tipoDocumento": this.tipoDocumento,
-    "documento":this.documento,
-    "telefono":this.telefono
   }
-  this.servicio.postEstudiantes(data).then(dataForm => {
-    console.log("DATOS ENVIADOS ", dataForm);
-    alert('El estudiante se creo correctamente');
 
-  }).catch(err =>
-    alert('Sucedio un erro al crea el estudiante')
+  spinner(): void {
+    this.spinnerService.show();
+    setTimeout(() => {
+      this.spinnerService.hide();
+    }, 2000);
+  }
 
-  );
- }
+  enviarDatos() {
+    this.spinner();
+    const data = {
+      "nombre": this.nombre,
+      "apellido": this.apellido,
+      "correo": this.correo,
+      "tipoDocumento": this.tipoDocumento,
+      "documento": this.documento,
+      "telefono": this.telefono
+    }
+    this.servicio.postEstudiantes(data).then(dataForm => {
+      console.log("DATOS ENVIADOS ", dataForm);
+      alert('El estudiante se creo correctamente');
 
-borrarDatos(){
+    }).catch(err =>
+      alert('Sucedio un erro al crea el estudiante')
 
-  this.form.reset();
+    );
+  }
 
-}
+  borrarDatos() {
+
+    this.nombre = '';
+    this.apellido = '';
+    this.correo = '';
+    // this.tipoDocumento = '';
+    this.documento = '';
+    this.telefono = '';
+
+  }
 
 }
